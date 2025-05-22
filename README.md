@@ -175,7 +175,7 @@ ChowNaija celebrates Nigeria’s diverse culinary landscape — from the bustlin
 
 Have suggestions or questions?
 
-📧 Reach out: `[your-email@example.com]`
+📧 Reach out: `[abdulbasitabdulwahab21@gmail.com]`
 🐛 Report issues: [Open an issue on GitHub](https://github.com/bascom241/ChownaijaServer/issues)
 
 ---
