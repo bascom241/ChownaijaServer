@@ -1,105 +1,189 @@
-ChowNaija Backend
-Welcome to the backend repository for ChowNaija, a vibrant platform where food lovers can explore restaurants across Nigeria, share reviews, and express their culinary experiences. Built with Spring Boot, this backend powers a seamless, scalable, and secure API to connect users with Nigeria's rich dining scene.
-Project Overview
-ChowNaija is a backend API designed to support a community-driven platform for restaurant discovery in Nigeria. Users can browse restaurants, read and write reviews, rate dining experiences, and share their thoughts on the vibrant Nigerian food culture. The backend is built using Spring Boot, leveraging its robust ecosystem to deliver a secure, RESTful API with JWT-based authentication, database integration, and efficient data management.
-Key Features
+Here's a well-formatted and professional README file for your **ChowNaija** backend project, written to enhance clarity, structure, and presentation:
 
-Restaurant Management: Create, read, update, and delete (CRUD) restaurant profiles with details like name, location, cuisine, and contact info.
-User Reviews: Allow users to post reviews, ratings, and comments for restaurants, fostering an interactive community.
-Authentication & Authorization: Secure endpoints with JWT (JSON Web Tokens) to ensure only authenticated users can post reviews or manage data.
-Database Integration: Persist restaurant and review data using a relational database (e.g., PostgreSQL) with Spring Data JPA.
-Scalable Architecture: Leverage Spring Boot’s microservices-ready design for scalability and maintainability.
+---
 
-Tech Stack
+# 🍲 ChowNaija Backend
 
-Framework: Spring Boot (Java)
-Security: Spring Security with JWT for authentication
-Database: Spring Data JPA with PostgreSQL (configurable for other databases)
-Dependency Management: Maven
-API Documentation: OpenAPI/Swagger (planned)
-Testing: JUnit and Mockito (planned)
+**Welcome to the backend repository for ChowNaija** – a vibrant platform where food lovers across Nigeria can explore restaurants, share reviews, and express their culinary experiences.
 
-Getting Started
-Prerequisites
+Built with **Spring Boot**, this backend powers a seamless, secure, and scalable RESTful API, connecting users to Nigeria's rich and diverse dining culture.
 
-Java 17 or higher
-Maven 3.8+
-PostgreSQL (or your preferred database)
-IDE (e.g., IntelliJ IDEA, Eclipse)
+---
 
-Installation
+## 🚀 Project Overview
 
-Clone the Repository:
+ChowNaija is a community-driven restaurant discovery platform designed to:
+
+* Help users **browse restaurants** by location and cuisine.
+* Let foodies **share and read reviews**.
+* Enable users to **rate and comment** on their dining experiences.
+
+With **Spring Boot** at its core, this backend leverages a robust Java ecosystem to deliver powerful features including:
+
+* **JWT authentication**
+* **Relational database integration**
+* **Secure and maintainable architecture**
+
+---
+
+## 🔑 Key Features
+
+* **🍽 Restaurant Management**
+  Create, read, update, and delete restaurant profiles with details like name, cuisine, location, and contact info.
+
+* **📝 User Reviews**
+  Authenticated users can write reviews, give ratings, and post comments.
+
+* **🔐 Authentication & Authorization**
+  Secure endpoints using **JWT (JSON Web Tokens)** – only logged-in users can manage or review content.
+
+* **💾 Database Integration**
+  Persistent data storage with **PostgreSQL** using **Spring Data JPA**.
+
+* **📦 Scalable Architecture**
+  Microservices-ready structure powered by Spring Boot.
+
+---
+
+## 🛠 Tech Stack
+
+| Category                  | Technology                   |
+| ------------------------- | ---------------------------- |
+| **Framework**             | Spring Boot (Java)           |
+| **Security**              | Spring Security + JWT        |
+| **Database**              | PostgreSQL + Spring Data JPA |
+| **Dependency Management** | Maven                        |
+| **API Docs**              | OpenAPI/Swagger *(planned)*  |
+| **Testing**               | JUnit & Mockito *(planned)*  |
+
+---
+
+## ⚙️ Getting Started
+
+### ✅ Prerequisites
+
+* Java 17 or higher
+* Maven 3.8+
+* PostgreSQL
+* IDE (e.g., IntelliJ IDEA, Eclipse)
+
+---
+
+### 🔧 Installation
+
+1. **Clone the Repository**
+
+```bash
 git clone https://github.com/bascom241/ChownaijaServer.git
 cd ChowNaijaMobile
+```
 
+2. **Configure the Database**
 
-Configure the Database:
+Update your `application.properties` file located at `src/main/resources/`:
 
-Set up a PostgreSQL database.
-Update src/main/resources/application.properties with your database credentials:spring.datasource.url=jdbc:postgresql://localhost:5432/chownaija
+```properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/chownaija
 spring.datasource.username=your-username
 spring.datasource.password=your-password
+
 spring.jpa.hibernate.ddl-auto=update
+
 jwt.secret.key=your-secure-base64-encoded-key
+```
 
+3. **Build and Run**
 
-
-
-Build and Run:
+```bash
 mvn clean install
 mvn spring-boot:run
+```
 
+4. **Access the API**
 
-Access the API:
+Your backend will be running at:
+👉 `http://localhost:8080`
 
-The API will be available at http://localhost:8080.
-Example endpoints (to be implemented):
-POST /api/auth/register: Register a new user
-POST /api/auth/login: Authenticate and receive a JWT
-GET /api/restaurants: List all restaurants
-POST /api/restaurants/{id}/reviews: Add a review
+---
 
+## 📌 Example API Endpoints *(To be implemented)*
 
+* `POST /api/auth/register` – Register a new user
+* `POST /api/auth/login` – Login and receive JWT
+* `GET /api/restaurants` – Get list of restaurants
+* `POST /api/restaurants/{id}/reviews` – Post a review for a restaurant
 
+---
 
+## 📁 Project Structure
 
-Project Structure
+```
 chownaija-backend/
 ├── src/
 │   ├── main/
 │   │   ├── java/com/example/chownaija/
-│   │   │   ├── config/        # Spring configuration (e.g., SecurityConfig)
-│   │   │   ├── controller/    # REST controllers for API endpoints
-│   │   │   ├── dao/          # Entities and repositories (e.g., User, Restaurant)
-│   │   │   ├── service/      # Business logic (e.g., JwtService, UserDetailsService)
-│   │   ├── resources/
-│   │       ├── application.properties  # Configuration file
-│   ├── test/                 # Unit and integration tests
-├── pom.xml                   # Maven dependencies
-├── README.md                 # This file
+│   │   │   ├── config/        # Spring config (e.g., SecurityConfig)
+│   │   │   ├── controller/    # REST API controllers
+│   │   │   ├── dao/           # Entities & Repositories
+│   │   │   ├── service/       # Business logic (e.g., JWT services)
+│   │   └── resources/
+│   │       └── application.properties
+│
+├── test/                      # Unit and integration tests
+├── pom.xml                   # Maven build file
+└── README.md                 # Project documentation
+```
 
-Contributing
-We welcome contributions to make ChowNaija even better! To contribute:
+---
 
-Fork the repository.
-Create a feature branch (git checkout -b feature/your-feature).
-Commit your changes (git commit -m "Add your feature").
-Push to the branch (git push origin feature/your-feature).
-Open a pull request.
+## 🤝 Contributing
 
-Please ensure your code follows our coding standards and includes tests where applicable.
-Future Enhancements
+We welcome your contributions to improve ChowNaija!
 
-API Documentation: Integrate Swagger for interactive API docs.
-Search & Filtering: Add search by cuisine, location, or rating.
-Image Uploads: Allow restaurants to upload photos via the API.
-Analytics: Provide insights into popular restaurants or trending reviews.
-Testing: Expand unit and integration tests for robust coverage.
+### How to Contribute:
 
-Why ChowNaija?
-ChowNaija celebrates Nigeria’s diverse culinary landscape, from bustling Lagos eateries to hidden gems in Abuja. By providing a platform for authentic user reviews, we empower foodies to discover and share their dining experiences, fostering a community around Nigeria’s vibrant food culture.
-Join us in building a deliciously connected Nigeria! 🍲
-Contact
-Have questions or ideas? Reach out via [your-email@example.com] or open an issue on GitHub.
-#SpringBoot #Java #API #Nigeria #Foodie #BackendDevelopment
+1. Fork the repository
+2. Create a feature branch:
+   `git checkout -b feature/your-feature-name`
+3. Commit your changes:
+   `git commit -m "Add your feature"`
+4. Push to your branch:
+   `git push origin feature/your-feature-name`
+5. Open a pull request
+
+> Make sure your code follows existing standards and includes relevant tests.
+
+---
+
+## 🔮 Future Enhancements
+
+* 📘 API Documentation with Swagger
+* 🔍 Search & Filter by cuisine, location, rating
+* 📷 Image Upload for restaurants
+* 📊 Analytics on top-rated or trending eateries
+* ✅ Full test coverage with JUnit & Mockito
+
+---
+
+## 🇳🇬 Why ChowNaija?
+
+ChowNaija celebrates Nigeria’s diverse culinary landscape — from the bustling streets of Lagos to the hidden gems of Abuja. We empower foodies to share honest reviews and discover new flavors through a trusted, community-driven platform.
+
+---
+
+## 📬 Contact
+
+Have suggestions or questions?
+
+📧 Reach out: `[your-email@example.com]`
+🐛 Report issues: [Open an issue on GitHub](https://github.com/bascom241/ChownaijaServer/issues)
+
+---
+
+## 📌 Tags
+
+`#SpringBoot` `#Java` `#API` `#Nigeria` `#Foodie` `#BackendDevelopment`
+
+---
+
+Let me know if you'd like a Markdown version to copy directly or want this saved into a file like `README.md`.
