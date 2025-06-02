@@ -2,6 +2,8 @@ package com.example.ChowNaijaMobile.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "ChownaijaUsers")
 public class User {
@@ -13,6 +15,24 @@ public class User {
     @Column(unique = true)
     private String email;
     private String password;
+    private Boolean isAccountFlaged = false;
+    private LocalDateTime flagDate = null;
+
+    public LocalDateTime getFlagDate() {
+        return flagDate;
+    }
+
+    public void setFlagDate(LocalDateTime flagDate) {
+        this.flagDate = flagDate;
+    }
+
+    public Boolean getAccountFlaged() {
+        return isAccountFlaged;
+    }
+
+    public void setAccountFlaged(Boolean accountFlaged) {
+        isAccountFlaged = accountFlaged;
+    }
 
     public User() {}
 
